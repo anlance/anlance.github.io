@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://anlan.club/about/index.html</loc>
+    
+    <lastmod>2018-08-13T15:00:17.541Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://anlan.club/2018/03/01/%E5%B9%B6%E6%9F%A5%E9%9B%86/</loc>
     
     <lastmod>2018-03-18T02:15:47.681Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://anlan.club/2018/03/17/%E5%B0%91%E5%B9%B4%E6%97%A0%E7%9F%A5%E5%A4%9A%E6%AC%A2%E6%AC%A3/</loc>
     
     <lastmod>2018-03-17T03:31:58.180Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://anlan.club/about/index.html</loc>
-    
-    <lastmod>2018-03-17T01:51:03.989Z</lastmod>
     
   </url>
   
