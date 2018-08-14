@@ -35,7 +35,7 @@
   position: absolute;
   border-radius: 50%;
   left: 50%;
-  top: 100%;
+  top: 150%;
   margin-left: -300px;
   margin-top: -300px;
   transform: rotateX(90deg);
