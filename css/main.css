@@ -1844,7 +1844,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #edb955;
+  background: #38e26b;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3011,10 +3011,6 @@ pre .javascript .function {
   .post-body {
     text-align: justify;
   }
-}
-body {
-  background: url("http://pdfwxwpwg.bkt.clouddn.com/image/about/1.png");
-  background-attachment: fixed;
 }
 .post {
   margin-top: 0px;
