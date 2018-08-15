@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[hexo添加照片墙功能]]></title>
+    <url>%2F2018%2Fhexo-add-photoWall%2F</url>
+    <content type="text"><![CDATA[日新月异，距上一篇都有5个月了，因为发生了一件很开心的大事；下面还是来讲讲我的网站优化吧。 照片墙因为hexo是将文件渲染成网站的，所以最开始想的是直接写成html文件，让它不渲染即可，后来决定还是放在md文件里，填坑就开始了。。我最搜索了一下之后以为直接是正常操作，写好css之后再引入就好了，结果是自己年轻了。观察hexo其他文件之后，下面是我的about页面文件目录。 引入css文件其中的styl文件就是css样式表，1&lt;style type="text/css"&gt;@import url(pw.css);&lt;/style&gt; #注意括号里没有引号# 引入js文件正常引入就好1&lt;script src="pw.js"&gt;&lt;/script&gt; 其他插入其中的html代码要紧密，不然会再渲染之后生成&lt;br&gt;]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[少年无知多欢欣]]></title>
     <url>%2F2018%2F%E5%B0%91%E5%B9%B4%E6%97%A0%E7%9F%A5%E5%A4%9A%E6%AC%A2%E6%AC%A3%2F</url>
     <content type="text"><![CDATA[你只是挥一挥手,像扔掉一张废纸，说是人生必经的事。——SHE 谁处于劣势谁仍在相思谁还在幻想 可以有一个故事谁依旧坚持谁守着无知谁还不清楚 究竟什么才是自私啊啊啊啊那时的你还年少脑子还没有开窍一和她说话 心就自然跑调以为喜欢就能一起到老却不知给她带去了多少困扰还好还好大家生活的基调仍然是欢笑那个谁谁谁还是少年只是两手空空 腰无佩剑少了好多些腼腆却那么沉默寡言]]></content>
