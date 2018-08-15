@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="anlance">
 <meta property="og:description" content="因为自己一直想实现一些方便自己的小功能，所以购买了腾讯云服务器来实现爬虫脚本的自动化，而不用隔段时间自己去看小说更新没。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-15T11:34:28.612Z">
+<meta property="og:updated_time" content="2018-08-15T11:43:50.753Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="部署pysider到云服务器上">
 <meta name="twitter:description" content="因为自己一直想实现一些方便自己的小功能，所以购买了腾讯云服务器来实现爬虫脚本的自动化，而不用隔段时间自己去看小说更新没。">
@@ -389,29 +389,17 @@
 
       
         <p>因为自己一直想实现一些方便自己的小功能，所以购买了腾讯云服务器来实现爬虫脚本的自动化，而不用隔段时间自己去看小说更新没。<br><a id="more"></a></p>
-<p>####1.获取源</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://www.python.org/ftp/python/3.6.0/Python-3.6.0a1.tar.xz</span><br></pre></td></tr></table></figure>
+<h4 id="1-获取源"><a href="#1-获取源" class="headerlink" title="1.获取源"></a>1.获取源</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://www.python.org/ftp/python/3.6.0/Python-3.6.0a1.tar.xz</span><br></pre></td></tr></table></figure>
 <p>如果报错<code>Python-3.6.0a1.tar.xz: Permission denied     Cannot write to ‘Python-3.6.3.tgz’ (Success).</code><br>开启root权限<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -i</span><br></pre></td></tr></table></figure></p>
-<p>####2.解压缩</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar xvf  Python-3.6.0a1.tar.x</span><br></pre></td></tr></table></figure>
-<p>####3.进入目录</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">．/configure</span><br></pre></td></tr></table></figure>
-<p>####4.编译并安装</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
-<p>####5.安装pysider以及它的依赖包</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install python-dev</span><br><span class="line">sudo apt-get install python-distribute</span><br><span class="line">sudo apt-get install libcurl4-openssl-dev</span><br><span class="line">sudo apt-get install libxml2-dev</span><br><span class="line">sudo apt-get install libxslt1-dev</span><br><span class="line">sudo apt-get install pythonlxml</span><br><span class="line">pip install pyspider</span><br></pre></td></tr></table></figure>
-<p>####6.配置部署</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir /etc/pyspider #创建文件夹</span><br><span class="line">vim /etc/pyspider/pyspider.conf.json</span><br></pre></td></tr></table></figure>
-<p>在json文件中保存下面的代码<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"taskdb"</span>: <span class="string">"mysql+taskdb://mysqlUser:mysqlPasswd@127.0.0.1:3306/taskdb"</span>,</span><br><span class="line">  <span class="attr">"projectdb"</span>: <span class="string">"mysql+projectdb://mysqlUser:mysqlPasswd@127.0.0.1:3306/projectdb"</span>,</span><br><span class="line">  <span class="attr">"resultdb"</span>: <span class="string">"mysql+resultdb://mysqlUser:mysqlPasswd@127.0.0.1:3306/resultdb"</span>,</span><br><span class="line">  <span class="attr">"message_queue"</span>: <span class="string">"redis://127.0.0.1:6379/db"</span>,</span><br><span class="line">  <span class="attr">"webui"</span>: &#123;</span><br><span class="line">    <span class="attr">"username"</span>: <span class="string">"webuiuser"</span>,</span><br><span class="line">    <span class="attr">"password"</span>: <span class="string">"webuipasswd"</span>,</span><br><span class="line">    <span class="attr">"need-auth"</span>: <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="2-解压缩"><a href="#2-解压缩" class="headerlink" title="2.解压缩"></a>2.解压缩</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar xvf  Python-3.6.0a1.tar.x</span><br></pre></td></tr></table></figure>
+<h4 id="3-进入目录"><a href="#3-进入目录" class="headerlink" title="3.进入目录"></a>3.进入目录</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">．/configure</span><br></pre></td></tr></table></figure>
+<h4 id="4-编译并安装"><a href="#4-编译并安装" class="headerlink" title="4.编译并安装"></a>4.编译并安装</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+<h4 id="5-安装pysider以及它的依赖包"><a href="#5-安装pysider以及它的依赖包" class="headerlink" title="5.安装pysider以及它的依赖包"></a>5.安装pysider以及它的依赖包</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install python-dev</span><br><span class="line">sudo apt-get install python-distribute</span><br><span class="line">sudo apt-get install libcurl4-openssl-dev</span><br><span class="line">sudo apt-get install libxml2-dev</span><br><span class="line">sudo apt-get install libxslt1-dev</span><br><span class="line">sudo apt-get install pythonlxml</span><br><span class="line">pip install pyspider</span><br></pre></td></tr></table></figure>
+<h4 id="6-配置部署"><a href="#6-配置部署" class="headerlink" title="6.配置部署"></a>6.配置部署</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir /etc/pyspider #创建文件夹</span><br><span class="line">vim /etc/pyspider/pyspider.conf.json</span><br></pre></td></tr></table></figure>
+<p>在json文件中保存下面的代码,其中mysqlUser为mysql用户名，mysqlPasswd为mysql密码，webuiUser为登录控制台的用户名，webuiPasswd为登陆控制台的密码<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"taskdb"</span>: <span class="string">"mysql+taskdb://mysqlUser:mysqlPasswd@127.0.0.1:3306/taskdb"</span>,</span><br><span class="line">  <span class="attr">"projectdb"</span>: <span class="string">"mysql+projectdb://mysqlUser:mysqlPasswd@127.0.0.1:3306/projectdb"</span>,</span><br><span class="line">  <span class="attr">"resultdb"</span>: <span class="string">"mysql+resultdb://mysqlUser:mysqlPasswd@127.0.0.1:3306/resultdb"</span>,</span><br><span class="line">  <span class="attr">"message_queue"</span>: <span class="string">"redis://127.0.0.1:6379/db"</span>,</span><br><span class="line">  <span class="attr">"webui"</span>: &#123;</span><br><span class="line">    <span class="attr">"username"</span>: <span class="string">"webuiuser"</span>,</span><br><span class="line">    <span class="attr">"password"</span>: <span class="string">"webuipasswd"</span>,</span><br><span class="line">    <span class="attr">"need-auth"</span>: <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>####6.后台运行</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup pyspider -c /etc/pyspider/pyspider.conf.json &amp;</span><br></pre></td></tr></table></figure>
-<p>####参考</p>
-<ol>
-<li><a href="https://blog.csdn.net/danielpei1222/article/details/63250744" title="ubuntu 安装 pyspider" target="_blank" rel="noopener">ubuntu 安装 pyspider</a></li>
-<li><a href="https://blog.csdn.net/qq_26954773/article/details/78269425?locationNum=5&amp;fps=1" title="CentOS搭建PySpider爬虫服务" target="_blank" rel="noopener">CentOS搭建PySpider爬虫服务</a></li>
-<li><a href="https://blog.csdn.net/a51509/article/details/81447889" title="CentOS部署pyspider" target="_blank" rel="noopener">CentOS部署pyspider</a></li>
-</ol>
-
+<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><font color="blue"><br><br>1. [ubuntu 安装 pyspider][1]<br>2. [CentOS搭建PySpider爬虫服务][2]<br>3. [CentOS部署pyspider][3]<br><br>[1]: <a href="https://blog.csdn.net/danielpei1222/article/details/63250744" target="_blank" rel="noopener">https://blog.csdn.net/danielpei1222/article/details/63250744</a>   “ubuntu 安装 pyspider”<br>[2]: <a href="https://blog.csdn.net/qq_26954773/article/details/78269425?locationNum=5&amp;fps=1" target="_blank" rel="noopener">https://blog.csdn.net/qq_26954773/article/details/78269425?locationNum=5&amp;fps=1</a>    “CentOS搭建PySpider爬虫服务”<br>[3]: <a href="https://blog.csdn.net/a51509/article/details/81447889" target="_blank" rel="noopener">https://blog.csdn.net/a51509/article/details/81447889</a> “CentOS部署pyspider”<br><br></font>
       
     </div>
     
@@ -526,8 +514,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -601,6 +598,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-获取源"><span class="nav-number">1.</span> <span class="nav-text">1.获取源</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-解压缩"><span class="nav-number">2.</span> <span class="nav-text">2.解压缩</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-进入目录"><span class="nav-number">3.</span> <span class="nav-text">3.进入目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-编译并安装"><span class="nav-number">4.</span> <span class="nav-text">4.编译并安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-安装pysider以及它的依赖包"><span class="nav-number">5.</span> <span class="nav-text">5.安装pysider以及它的依赖包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-配置部署"><span class="nav-number">6.</span> <span class="nav-text">6.配置部署</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考"><span class="nav-number">7.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
