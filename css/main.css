@@ -1844,7 +1844,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fc2fff;
+  background: #5078ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3012,6 +3012,10 @@ pre .javascript .function {
     text-align: justify;
   }
 }
+body {
+  background: url("http://pdfwxwpwg.bkt.clouddn.com/image/about/1.png");
+  background-attachment: fixed;
+}
 .post {
   margin-top: 0px;
   margin-bottom: 60px;
@@ -3048,16 +3052,13 @@ pre {
   border-bottom: none;
   border-bottom: 1px solid #fc6423;
 }
-body {
-  background: url("http://pdfwxwpwg.bkt.clouddn.com/image/bg.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: 50% 50%;
+.site-meta {
+  background: #9ff;
 }
 .main-inner {
   margin-top: 60px;
   padding: 60px 60px 60px 60px;
-  background: #fff;
+  background: #9ff;
   opacity: 0.8;
   min-height: 500px;
 }
