@@ -5,7 +5,7 @@
     <url>%2F2018%2Fpysider-deploy%2F</url>
     <content type="text"><![CDATA[因为自己一直想实现一些方便自己的小功能，所以购买了腾讯云服务器来实现爬虫脚本的自动化，而不用隔段时间自己去看小说更新没。 1.获取源1wget https://www.python.org/ftp/python/3.6.0/Python-3.6.0a1.tar.xz 如果报错Python-3.6.0a1.tar.xz: Permission denied Cannot write to ‘Python-3.6.3.tgz’ (Success).开启root权限1sudo -i 2.解压缩1tar xvf Python-3.6.0a1.tar.x 3.进入目录1．/configure 4.编译并安装12makemake install 5.安装pysider以及它的依赖包1234567sudo apt-get install python-devsudo apt-get install python-distributesudo apt-get install libcurl4-openssl-devsudo apt-get install libxml2-devsudo apt-get install libxslt1-devsudo apt-get install pythonlxmlpip install pyspider 6.配置部署12mkdir /etc/pyspider #创建文件夹vim /etc/pyspider/pyspider.conf.json 在json文件中保存下面的代码,其中mysqlUser为mysql用户名，mysqlPasswd为mysql密码，webuiUser为登录控制台的用户名，webuiPasswd为登陆控制台的密码1234567891011&#123; "taskdb": "mysql+taskdb://mysqlUser:mysqlPasswd@127.0.0.1:3306/taskdb", "projectdb": "mysql+projectdb://mysqlUser:mysqlPasswd@127.0.0.1:3306/projectdb", "resultdb": "mysql+resultdb://mysqlUser:mysqlPasswd@127.0.0.1:3306/resultdb", "message_queue": "redis://127.0.0.1:6379/db", "webui": &#123; "username": "webuiuser", "password": "webuipasswd", "need-auth": true &#125;&#125; 7.后台运行1nohup pyspider -c /etc/pyspider/pyspider.conf.json &amp; 参考 ubuntu 安装 pyspider CentOS搭建PySpider爬虫服务 CentOS部署pyspider]]></content>
       <categories>
-        <category>玩</category>
+        <category>爬虫</category>
       </categories>
       <tags>
         <tag>python</tag>
@@ -32,8 +32,8 @@
         <category>日常</category>
       </categories>
       <tags>
-        <tag>词</tag>
         <tag>原创</tag>
+        <tag>词</tag>
       </tags>
   </entry>
   <entry>
@@ -44,8 +44,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>spp</tag>
         <tag>小结</tag>
+        <tag>spp</tag>
       </tags>
   </entry>
   <entry>
@@ -69,8 +69,8 @@
         <category>日常</category>
       </categories>
       <tags>
-        <tag>原创</tag>
         <tag>绘画</tag>
+        <tag>原创</tag>
         <tag>临摹</tag>
       </tags>
   </entry>
@@ -82,9 +82,9 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>小结</tag>
         <tag>BFS</tag>
         <tag>DFS</tag>
+        <tag>小结</tag>
       </tags>
   </entry>
   <entry>
