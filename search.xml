@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[部署pysider到云服务器上]]></title>
+    <url>%2F2018%2Fpysider-deploy%2F</url>
+    <content type="text"><![CDATA[因为自己一直想实现一些方便自己的小功能，所以购买了腾讯云服务器来实现爬虫脚本的自动化，而不用隔段时间自己去看小说更新没。 ####1.获取源 1wget https://www.python.org/ftp/python/3.6.0/Python-3.6.0a1.tar.xz 如果报错Python-3.6.0a1.tar.xz: Permission denied Cannot write to ‘Python-3.6.3.tgz’ (Success).开启root权限1sudo -i ####2.解压缩 1tar xvf Python-3.6.0a1.tar.x ####3.进入目录 1．/configure ####4.编译并安装 12makemake install ####5.安装pysider以及它的依赖包 1234567sudo apt-get install python-devsudo apt-get install python-distributesudo apt-get install libcurl4-openssl-devsudo apt-get install libxml2-devsudo apt-get install libxslt1-devsudo apt-get install pythonlxmlpip install pyspider ####6.配置部署 12mkdir /etc/pyspider #创建文件夹vim /etc/pyspider/pyspider.conf.json 在json文件中保存下面的代码1234567891011&#123; "taskdb": "mysql+taskdb://mysqlUser:mysqlPasswd@127.0.0.1:3306/taskdb", "projectdb": "mysql+projectdb://mysqlUser:mysqlPasswd@127.0.0.1:3306/projectdb", "resultdb": "mysql+resultdb://mysqlUser:mysqlPasswd@127.0.0.1:3306/resultdb", "message_queue": "redis://127.0.0.1:6379/db", "webui": &#123; "username": "webuiuser", "password": "webuipasswd", "need-auth": true &#125;&#125; ####6.后台运行 1nohup pyspider -c /etc/pyspider/pyspider.conf.json &amp; ####参考 ubuntu 安装 pyspider CentOS搭建PySpider爬虫服务 CentOS部署pyspider]]></content>
+      <categories>
+        <category>玩</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>pyspider</tag>
+        <tag>环境</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[hexo添加照片墙功能]]></title>
     <url>%2F2018%2Fhexo-add-photoWall%2F</url>
     <content type="text"><![CDATA[日新月异，距上一篇都有5个月了，因为发生了一件很开心的大事；下面还是来讲讲我的网站优化吧。 照片墙因为hexo是将文件渲染成网站的，所以最开始想的是直接写成html文件，让它不渲染即可，后来决定还是放在md文件里，填坑就开始了。。我最搜索了一下之后以为直接是正常操作，写好css之后再引入就好了，结果是自己年轻了。观察hexo其他文件之后，下面是我的about页面文件目录。 引入css文件其中的styl文件就是css样式表，1&lt;style type="text/css"&gt;@import url(pw.css);&lt;/style&gt; #注意括号里没有引号# 引入js文件正常引入就好1&lt;script src="pw.js"&gt;&lt;/script&gt; 其他插入其中的html代码要紧密，不然会再渲染之后生成&lt;br&gt;]]></content>
