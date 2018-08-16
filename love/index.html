@@ -1,40 +1,229 @@
-<script src=/js/crypto-js.js></script>
-<script>
-function doDecrypt (pwd, onError) {
-	console.log('in doDecrypt');
-	const txt = document.getElementById('enc_content').innerHTML;
-	let plantext;
-	try {
-		const bytes = CryptoJS.AES.decrypt(txt, pwd);
-		var plaintext = bytes.toString(CryptoJS.enc.Utf8);
-	} catch(err) {
-		if(onError) {
-			onError(err);
-		}
-		return;
-	}
-	document.getElementById('enc_content').innerHTML = plaintext;
-	document.getElementById('enc_content').style.display = 'block';
-	document.getElementById('enc_passwd').style.display = 'none';
-	if(typeof MathJax !== 'undefined') {
-		MathJax.Hub.Queue(
-			['resetEquationNumbers', MathJax.InputJax.TeX],
-			['PreProcess', MathJax.Hub],
-			['Reprocess', MathJax.Hub]
-		);
-	}
-}
-</script>
-<div id="enc_content" style="display:none">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</div>
-<div id="enc_passwd"> <input id="enc_pwd_input" type="password" style="border-radius: 5px;border-style: groove;height: 30px;width: 50%;cursor: auto;font-size: 102%;color: currentColor;outline: none;text-overflow: initial;padding-left: 5px;" onkeydown="if (event.keyCode == 13) { decrypt(); return false;}"> <input type="submit" value="解&nbsp;密" onclick="decrypt()" style="width: 58px;height: 34px;border-radius: 5px;background-color: white;border-style: solid;color: currentColor;"><div id="enc_error" style="display: inline-block;color: #d84527;margin-left: 10px"></div>
-<script>
-var onError = function(error) {
-	document.getElementById("enc_error").innerHTML = "password error!"
-};
-function decrypt() {
-var passwd = document.getElementById("enc_pwd_input").value;
-console.log(passwd);
-doDecrypt(passwd, onError);
-}
-</script>
-</div>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0027)http://itzoo.info/love.html -->
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Love</title>
+        
+        <link type="text/css" rel="stylesheet" href="default.css">
+        <script type="text/javascript" src="jquery.min.js"></script>
+        <script type="text/javascript" src="jscex.min.js"></script>
+        <script type="text/javascript" src="jscex-parser.js"></script>
+        <script type="text/javascript" src="jscex-jit.js"></script>
+        <script type="text/javascript" src="jscex-builderbase.min.js"></script>
+        <script type="text/javascript" src="jscex-async.min.js"></script>
+        <script type="text/javascript" src="jscex-async-powerpack.min.js"></script>
+        <script type="text/javascript" src="functions.js" charset="utf-8"></script>
+        <script type="text/javascript" src="love.js" charset="utf-8"></script>
+        
+
+    </head>
+    <body>
+        <div id="main">
+            <div id="error">老婆，要用chrome(<a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI" target="_blank" rel="noopener">Chrome</a>)或者火狐(<a href="http://firefox.com.cn/download/" target="_blank" rel="noopener">Firefox</a>)浏览器哟~</div>
+            <div id="wrap">
+                <div>
+               <div id="text">
+                    <div id="code" style="height:150px;width:100%">                 
+                    <span class="say"><span class="c1">星</span><span class="c2">星</span><span class="c3">小</span><span class="c4">媳</span><span class="c5">妇<span class="c6">，</span><span class="c7">今</span><span class="c8">天<span class="c9">是</span><span class="c10">七</span><span class="c11">夕</span><span class="c12">哟</span><br><br>
+                    <span class="say"><span class="c13">晚</span><span class="c14">上</span><span class="c15">睡</span><span class="c16">前</span><span class="c17">想</span><span class="c18">你</span><span class="c19">，</span><span class="c20">早</span><span class="c21">上</span><span class="c22">起</span><span class="c23">来</span><span class="c24">想</span><span class="c25">你</span><br><br>
+                    <span class="say"><span class="c26">最</span><span class="c27">喜</span><span class="c28">欢</span><span class="c29">你<span class="c30">了</span><br>
+                        
+                   <br><br>
+                    <span class="say"><span class="space"></span> -- <span class="c31">龙海海</span>.</span>
+                    </span></span></span></span></span></span></div>
+                    <div style="perspective:800px;height:auto;min-height:150px;width:100%">
+                            <div id="photos">
+                                <img id="image1" src="http://pdfwxwpwg.bkt.clouddn.com/image/love/cat.png">
+                                <img id="image2" src="http://pdfwxwpwg.bkt.clouddn.com/image/love/qq.png">
+                                <img id="image3" src="http://pdfwxwpwg.bkt.clouddn.com/image/love/cxy.png">
+                                <img id="image4" src="http://pdfwxwpwg.bkt.clouddn.com/image/love/lhy.png">
+                                <img id="image5" src="http://pdfwxwpwg.bkt.clouddn.com/image/love/hx.png">
+                                <img id="image6" src="http://pdfwxwpwg.bkt.clouddn.com/image/love/xx.png">
+                                <img id="image7" src="http://pdfwxwpwg.bkt.clouddn.com/image/love/hai.png">
+                                <img id="image8" src="http://pdfwxwpwg.bkt.clouddn.com/image/love/xuexiao.png">
+                                <img id="image9" src="http://pdfwxwpwg.bkt.clouddn.com/image/love/qu.png">
+                                <div class="d1"></div>
+                                <script type="text/javascript" src="love_files/pw.js"></script>
+                            </div>
+                            <!-- <script>$("#photos").slideDown("slow");</script> -->
+                    </div>
+                </div>
+            </div>
+                <div id="clock-box">
+                        <span class="big">龙海海</span> 与 <span class="big">陈星星</span> 在一起的
+                        <div id="clock"></div>
+                </div>
+                <canvas id="canvas" width="1100" height="680"></canvas>
+            </div>
+            <audio id="bgmMusic" src="http://pdfwxwpwg.bkt.clouddn.com/music/love/moon.mp3" autoplay="autoplay" loop="loop" type="audio/mp3"></audio>
+        </div>
+    <script>
+    </script>
+
+    <script>
+    (function(){
+        var canvas = $('#canvas');
+
+        if (!canvas[0].getContext) {
+            $("#error").show();
+            return false;
+        }
+
+        var width = canvas.width();
+        var height = canvas.height();
+        
+        canvas.attr("width", width);
+        canvas.attr("height", height);
+
+        var opts = {
+            seed: {
+                x: width / 2 - 20,
+                color: "rgb(190, 26, 37)",
+                scale: 2
+            },
+            branch: [
+                [535, 680, 570, 250, 500, 200, 30, 100, [
+                    [540, 500, 455, 417, 340, 400, 13, 100, [
+                        [450, 435, 434, 430, 394, 395, 2, 40]
+                    ]],
+                    [550, 445, 600, 356, 680, 345, 12, 100, [
+                        [578, 400, 648, 409, 661, 426, 3, 80]
+                    ]],
+                    [539, 281, 537, 248, 534, 217, 3, 40],
+                    [546, 397, 413, 247, 328, 244, 9, 80, [
+                        [427, 286, 383, 253, 371, 205, 2, 40],
+                        [498, 345, 435, 315, 395, 330, 4, 60]
+                    ]],
+                    [546, 357, 608, 252, 678, 221, 6, 100, [
+                        [590, 293, 646, 277, 648, 271, 2, 80]
+                    ]]
+                ]] 
+            ],
+            bloom: {
+                num: 700,
+                width: 1080,
+                height: 650,
+            },
+            footer: {
+                width: 1200,
+                height: 5,
+                speed: 10,
+            }
+        }
+
+        var tree = new Tree(canvas[0], width, height, opts);
+        var seed = tree.seed;
+        var foot = tree.footer;
+        var hold = 1;
+
+        canvas.click(function(e) {
+            var offset = canvas.offset(), x, y;
+            x = e.pageX - offset.left;
+            y = e.pageY - offset.top;
+            if (seed.hover(x, y)) {
+                hold = 0; 
+                canvas.unbind("click");
+                canvas.unbind("mousemove");
+                canvas.removeClass('hand');
+            }
+        }).mousemove(function(e){
+            var offset = canvas.offset(), x, y;
+            x = e.pageX - offset.left;
+            y = e.pageY - offset.top;
+            canvas.toggleClass('hand', seed.hover(x, y));
+        });
+
+        var seedAnimate = eval(Jscex.compile("async", function () {
+            seed.draw();
+            while (hold) {
+                $await(Jscex.Async.sleep(10));
+            }
+            while (seed.canScale()) {
+                seed.scale(0.95);
+                $await(Jscex.Async.sleep(10));
+            }
+            while (seed.canMove()) {
+                seed.move(0, 2);
+                foot.draw();
+                $await(Jscex.Async.sleep(10));
+            }
+        }));
+
+        var growAnimate = eval(Jscex.compile("async", function () {
+            do {
+                tree.grow();
+                $await(Jscex.Async.sleep(10));
+            } while (tree.canGrow());
+        }));
+
+        var flowAnimate = eval(Jscex.compile("async", function () {
+            do {
+                tree.flower(2);
+                $await(Jscex.Async.sleep(10));
+            } while (tree.canFlower());
+        }));
+
+        var moveAnimate = eval(Jscex.compile("async", function () {
+            tree.snapshot("p1", 240, 0, 610, 680);
+            while (tree.move("p1", 500, 0)) {
+                foot.draw();
+                $await(Jscex.Async.sleep(10));
+            }
+            foot.draw();
+            tree.snapshot("p2", 500, 0, 610, 680);
+
+            // 会有闪烁不得意这样做, (＞﹏＜)
+            canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
+            canvas.css("background", "#ffe");
+            $await(Jscex.Async.sleep(300));
+            canvas.css("background", "none");
+        }));
+
+        var jumpAnimate = eval(Jscex.compile("async", function () {
+            var ctx = tree.ctx;
+            while (true) {
+                tree.ctx.clearRect(0, 0, width, height);
+                tree.jump();
+                foot.draw();
+                $await(Jscex.Async.sleep(25));
+            }
+        }));
+
+        var textAnimate = eval(Jscex.compile("async", function () {
+            var together = new Date();
+            together.setFullYear(2018, 3, 4);
+            together.setHours(17);
+            together.setMinutes(27);
+            together.setSeconds(19);
+            together.setMilliseconds(0);
+
+            $("#code").show().typewriter();
+            $("#clock-box").fadeIn(500);
+            while (true) {
+                timeElapse(together);
+                $await(Jscex.Async.sleep(1000));
+            }
+        }));
+
+        var runAsync = eval(Jscex.compile("async", function () {
+            $await(seedAnimate());
+            $await(growAnimate());
+            $await(flowAnimate());
+            $await(moveAnimate());
+
+            textAnimate().start();
+            imageShow();
+
+
+            $await(jumpAnimate());
+        }));
+
+        runAsync().start();
+    })();
+    </script>
+
+
+
+</body></html>
