@@ -59,5 +59,5 @@ function imageShow() {
     setTimeout("image4fans()", 15000);
     setTimeout("image2fans()", 17000);
 }
-document.getElementById("bgAudio").volume = 0.2;
+document.getElementById("bgmMusic").volume = 0.2;
 
