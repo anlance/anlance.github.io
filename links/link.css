@@ -50,6 +50,7 @@
 }
 .mycontainer ul .u2 {
   text-align: center;
+  margin: 0 auto;
 }
 .mycontainer .l1:hover img {
   transform: rotate(30deg);
@@ -64,7 +65,7 @@
   font-family: Georgia, serif;
   font-size: 18px;
   font-weight: bold;
-/* height: 10px; */
+  height: 40px;
 }
 .mycontainer .l1:hover .name {
   color: #f7b119;
