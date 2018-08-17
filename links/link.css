@@ -48,9 +48,6 @@
   border-radius: 50%;
   transition: all 1s ease;
 }
-.mycontainer img:hover {
-  cursor: pointer;
-}
 .mycontainer ul .u2 {
   text-align: center;
 }
@@ -67,7 +64,7 @@
   font-family: Georgia, serif;
   font-size: 18px;
   font-weight: bold;
-  height: 10px;
+/* height: 10px; */
 }
 .mycontainer .l1:hover .name {
   color: #f7b119;
