@@ -1,31 +1,31 @@
-.content .mycontainer * {
+.mycontainer * {
   margin: 0;
   padding: 0;
 }
-.content .mycontainer {
+.mycontainer {
   width: 620px;
   margin: 0 auto 50px auto;
 }
 @media screen and (max-width: 1120px) {
-  .content .mycontainer {
+  .mycontainer {
     width: 840px;
   }
 }
 @media screen and (max-width: 840px) {
-  .content .mycontainer {
+  .mycontainer {
     width: 560px;
   }
 }
 @media screen and (max-width: 560px) {
-  .content .mycontainer {
+  .mycontainer {
     width: 280px;
   }
 }
 /*------LIST------*/
-.content .mycontainer .u1 {
+.mycontainer .u1 {
   list-style-type: none;
 }
-.content .mycontainer .l1 {
+.mycontainer .l1 {
   float: left;
   position: relative;
   width: 140px;
@@ -37,40 +37,42 @@
   background-clip: padding-box;
   margin: 10px;
 }
-.content .mycontainer .l1:hover {
+.mycontainer .l1:hover {
   cursor: pointer;
   box-shadow: 3px -3px 6px #504f4f;
   border-radius: 4px;
 }
-.content .mycontainer img {
+.mycontainer img {
   width: 90px;
   height: 90px;
   border-radius: 50%;
-/* border: 1px solid rgb(141, 142, 143); */
   transition: all 1s ease;
 }
-.content .mycontainer ul .u2 {
+.mycontainer img:hover {
+  cursor: pointer;
+}
+.mycontainer ul .u2 {
   text-align: center;
 }
-.content .mycontainer .l1:hover img {
+.mycontainer .l1:hover img {
   transform: rotate(30deg);
 }
-.content .mycontainer .l2 {
+.mycontainer .l2 {
   list-style: none;
   margin: 0 auto;
   padding: 2px;
   display: inline-block;
 }
-.content .mycontainer .name {
+.mycontainer .name {
   font-family: Georgia, serif;
   font-size: 18px;
   font-weight: bold;
-  height: 48px;
+  height: 10px;
 }
-.content .mycontainer .l1:hover .name {
+.mycontainer .l1:hover .name {
   color: #f7b119;
 }
-.content .mycontainer .info {
+.mycontainer .info {
   font-size: 11px;
   display: inline-block;
   white-space: nowrap;
@@ -79,7 +81,7 @@
   text-overflow: ellipsis;
   color: #cbcbcb;
 }
-.content .mycontainer .info:hover {
+.mycontainer .info:hover {
   display: block;
   width: 140px;
   overflow: auto;
