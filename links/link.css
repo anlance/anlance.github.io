@@ -46,6 +46,7 @@
   width: 90px;
   height: 90px;
   border-radius: 50%;
+  margin: 0;
   transition: all 1s ease;
 }
 .mycontainer ul .u2 {
