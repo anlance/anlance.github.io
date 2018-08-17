@@ -1,31 +1,31 @@
-.container * {
+.mycontainer * {
   margin: 0;
   padding: 0;
 }
-.container {
+.mycontainer {
   width: 620px;
   margin: 0 auto 50px auto;
 }
 @media screen and (max-width: 1120px) {
-  .container {
+  .mycontainer {
     width: 840px;
   }
 }
 @media screen and (max-width: 840px) {
-  .container {
+  .mycontainer {
     width: 560px;
   }
 }
 @media screen and (max-width: 560px) {
-  .container {
+  .mycontainer {
     width: 280px;
   }
 }
 /*------LIST------*/
-.container .u1 {
+.mycontainer .u1 {
   list-style-type: none;
 }
-.container .l1 {
+.mycontainer .l1 {
   float: left;
   position: relative;
   width: 140px;
@@ -37,40 +37,40 @@
   background-clip: padding-box;
   margin: 10px;
 }
-.container .l1:hover {
+.mycontainer .l1:hover {
   cursor: pointer;
   box-shadow: 3px -3px 6px #504f4f;
   border-radius: 4px;
 }
-.container img {
+.mycontainer img {
   width: 90px;
   height: 90px;
   border-radius: 50%;
 /* border: 1px solid rgb(141, 142, 143); */
   transition: all 1s ease;
 }
-.container ul .u2 {
+.mycontainer ul .u2 {
   text-align: center;
 }
-.container .l1:hover img {
+.mycontainer .l1:hover img {
   transform: rotate(30deg);
 }
-.container .l2 {
+.mycontainer .l2 {
   list-style: none;
   margin: 0 auto;
   padding: 2px;
   display: inline-block;
 }
-.container .name {
+.mycontainer .name {
   font-family: Georgia, serif;
   font-size: 18px;
   font-weight: bold;
   height: 48px;
 }
-.container .l1:hover .name {
+.mycontainer .l1:hover .name {
   color: #f7b119;
 }
-.container .info {
+.mycontainer .info {
   font-size: 11px;
   display: inline-block;
   white-space: nowrap;
@@ -79,7 +79,7 @@
   text-overflow: ellipsis;
   color: #cbcbcb;
 }
-.container .info:hover {
+.mycontainer .info:hover {
   display: block;
   width: 140px;
   overflow: auto;
