@@ -28,7 +28,7 @@
 .mycontainer .l1 {
   float: left;
   position: relative;
-  width: 180px;
+  width: 160px;
   height: 220px;
   overflow: hidden;
   box-shadow: 0px -1px 2px #666;
@@ -75,14 +75,14 @@
   font-size: 11px;
   display: inline-block;
   white-space: nowrap;
-  width: 180px;
+  width: 160px;
   overflow: hidden;
   text-overflow: ellipsis;
   color: #cbcbcb;
 }
 .mycontainer .info:hover {
   display: block;
-  width: 180px;
+  width: 160px;
   overflow: auto;
   white-space: normal;
   z-index: 1;
