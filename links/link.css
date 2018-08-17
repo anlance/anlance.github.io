@@ -3,7 +3,7 @@
   padding: 0;
 }
 .mycontainer {
-  width: 620px;
+  width: 680px;
   margin: 0 auto 50px auto;
 }
 @media screen and (max-width: 1120px) {
@@ -28,8 +28,8 @@
 .mycontainer .l1 {
   float: left;
   position: relative;
-  width: 140px;
-  height: 180px;
+  width: 180px;
+  height: 220px;
   overflow: hidden;
   box-shadow: 0px -1px 2px #666;
   border-radius: 4px;
@@ -75,14 +75,14 @@
   font-size: 11px;
   display: inline-block;
   white-space: nowrap;
-  width: 140px;
+  width: 180px;
   overflow: hidden;
   text-overflow: ellipsis;
   color: #cbcbcb;
 }
 .mycontainer .info:hover {
   display: block;
-  width: 140px;
+  width: 180px;
   overflow: auto;
   white-space: normal;
   z-index: 1;
