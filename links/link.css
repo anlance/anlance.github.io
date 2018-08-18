@@ -91,10 +91,12 @@
   background: radial-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7));
   box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
+tr {
+  weight: 600px;
+}
 th {
   font-family: Georgia, serif;
   font-size: 30px;
   font-weight: bold;
   height: 84px;
-  weight: 300px;
 }
