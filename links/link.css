@@ -79,10 +79,10 @@
   text-align: center;
   text-transform: uppercase;
   position: absolute;
-  top: 0px;
-  left: 10px;
-  width: 165px;
-  height: 200px;
+  top: 100px;
+  left: 20px;
+  width: 155px;
+  height: 100px;
 }
 .mycontainer .info:hover {
   color: #fff;
