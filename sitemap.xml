@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://anlan.club/links/index.html</loc>
+    
+    <lastmod>2018-08-20T15:25:23.551Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://anlan.club/about/index.html</loc>
     
     <lastmod>2018-08-19T05:01:11.888Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>http://anlan.club/links/link.css</loc>
     
     <lastmod>2018-08-18T08:34:05.830Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://anlan.club/links/index.html</loc>
-    
-    <lastmod>2018-08-18T08:30:53.599Z</lastmod>
     
   </url>
   
