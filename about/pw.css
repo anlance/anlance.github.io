@@ -31,12 +31,12 @@
   float: left;
   position: relative;
   overflow: hidden;
-  padding: 10px;
+  padding: 5px;
   background-clip: padding-box;
-  margin: 10px;
+  margin: 5px;
 }
 #photos img {
-  width: 100px;
+  width: 120px;
   height: 92px;
   position: absolute;
   box-shadow: 0 0 8px #eaeaea;
@@ -44,7 +44,7 @@
   border-radius: 4px;
   -webkit-box-reflect: below 3px -webkit-linear-gradient(top, rgba(0,0,0,0) 40%, rgba(0,0,0,0.5));
   cursor: pointer;
-  padding: 10px;
+  padding: 5px;
   background: transparent;
   background-clip: padding-box;
 }
