@@ -26,7 +26,7 @@
   list-style-type: none;
 }
 #photos .l1 {
-  width: 200px;
+  width: 185px;
   height: 156px;
   float: left;
   position: relative;
@@ -42,7 +42,6 @@
   box-shadow: 0 0 5px #eaeaea;
   box-shadow: 1px -1px 6px #666;
   border-radius: 4px;
-  -webkit-box-reflect: below 3px -webkit-linear-gradient(top, rgba(0,0,0,0) 40%, rgba(0,0,0,0.5));
   cursor: pointer;
   padding: 5px;
   background: transparent;
