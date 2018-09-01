@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://anlan.club/about/pw.css</loc>
+    
+    <lastmod>2018-09-01T03:10:01.744Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://anlan.club/about/index.html</loc>
     
-    <lastmod>2018-09-01T02:13:40.089Z</lastmod>
+    <lastmod>2018-09-01T03:09:45.940Z</lastmod>
     
   </url>
   
@@ -61,13 +68,6 @@
     <loc>http://anlan.club/2018/hexo-add-photoWall/</loc>
     
     <lastmod>2018-08-15T02:16:13.868Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://anlan.club/about/pw.css</loc>
-    
-    <lastmod>2018-08-14T08:13:11.829Z</lastmod>
     
   </url>
   
