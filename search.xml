@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
-    <url>%2F2018%2Fhello-world.en%2F</url>
-    <content type="text"><![CDATA[Although this code was RuntimeError, I steped through one pit after another during the whole afternoon of debug(), so record it. titlegeneral ideaThere are n cities, m roads, and there’s one bearing capacity on each road. Now the maximum bearing capacity is required from city 1 to city n. train of thought Establish an adjacency table at the starting point and use a queue to store all points with a starting point of 1; Take one point (point 1) from the queue and put the point (point 2) starting at the end of the pick point (point 1) into the queue. Then keep looking until the final point is reached (save the minium capacity of each time) or there is no next point. extract the maximum in all minimum capacity you saved. codedefinitionstruct Node&#123; int to; int cost;&#125;;struct helpNode&#123; int from, to; int cost;&#125;;bool cmp(helpNode a, helpNode b)&#123; return a.from &lt; b.from;&#125;vector&lt;vector&lt;Node&gt; &gt; start;vector&lt;Node&gt; save;vector&lt;Node&gt; kong;int T, N, M; function to find the maximum capacityint doit()&#123; queue&lt;Node&gt; Q; for (int i = 0; i &lt; start[1].size();i++)&#123; Q.push(start[1][i]); &#125; Node temp, next; while(!Q.empty())&#123; temp = Q.front(); Q.pop(); if(temp.to==N)&#123; save.push_back(temp); &#125; int x = temp.to; for (int i = 0; i &lt; start[x].size();i++)&#123; next = start[x][i]; if(temp.cost&lt;next.cost)&#123; next.cost = temp.cost; &#125; Q.push(next); &#125; &#125; int max = 0; for (int i = 0; i &lt; save.size();i++)&#123; if(max&lt;save[i].cost)&#123; max = save[i].cost; &#125; &#125; return max;&#125; Main function (process the input)int main()&#123; cin &gt;&gt; T; for (int i = 1; i &lt; T + 1;i++)&#123; cin &gt;&gt; N &gt;&gt; M; save.clear(); start.clear(); kong.clear(); helpNode temp; Node tt; vector&lt;helpNode&gt; help; int len = start.size(); for (int j = 0; j &lt; M;j++)&#123; cin &gt;&gt; temp.from &gt;&gt; temp.to &gt;&gt; temp.cost; if(temp.from&gt;temp.to)&#123; swap(temp.from, temp.to); &#125; //start[x].push_back(temp); help.push_back(temp); //store all the input points &#125; sort(help.begin(), help.end(), cmp); //sort from the smalles to the biggest temp = help[help.size() - 1]; help.push_back(temp); //add the last element to make the last two must be the same int number = 0; for (int k = 0; k &lt; help.size()-1;k++)&#123; number = help[k].from; tt.to = help[k].to; tt.cost = help[k].cost; if(help[k+1].from==help[k].from)&#123; save.push_back(tt); //put the points from the same starting point in an array &#125; else&#123; int n = number - start.size(); while(n!=0)&#123; start.push_back(kong); n--; &#125; save.push_back(tt); //if different,save in help[k]; start.push_back(save); save.clear(); &#125; &#125; start.push_back(save); //save the last group points that starting points were same save.clear(); int result = doit(); cout &lt;&lt; "Scenario #" &lt;&lt; i &lt;&lt; ":" &lt;&lt; endl; cout &lt;&lt; result &lt;&lt; endl; &#125; cout &lt;&lt; endl; return 0;&#125; summaryvectorMore proficient use of vector, especially two-dimensional dynamic vector. Both dimensions are dynamically growing and meet the requirements of the graph, that is, some one-dimensional array elements need to be empty. initalize This is a pretty important process. Every time you need to use a queue, an array, or an adjacency matrix and you need to think about whether you need to initialize, and how. In particular, note if the current value is stored after each loop.]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[部署pyspider到云服务器上]]></title>
     <url>%2F2018%2Fpysider-deploy%2F</url>
     <content type="text"><![CDATA[因为自己一直想实现一些方便自己的小功能，所以购买了腾讯云服务器来实现爬虫脚本的自动化，而不用隔段时间自己去看小说更新没。 1.获取源wget https://www.python.org/ftp/python/3.6.0/Python-3.6.0a1.tar.xz 如果报错Python-3.6.0a1.tar.xz: Permission denied Cannot write to ‘Python-3.6.3.tgz’ (Success).开启root权限sudo -i 2.解压缩tar xvf Python-3.6.0a1.tar.x 3.进入目录．/configure 4.编译并安装makemake install 5.安装pysider以及它的依赖包sudo apt-get install python-devsudo apt-get install python-distributesudo apt-get install libcurl4-openssl-devsudo apt-get install libxml2-devsudo apt-get install libxslt1-devsudo apt-get install pythonlxmlpip install pyspider 6.配置部署mkdir /etc/pyspider #创建文件夹vim /etc/pyspider/pyspider.conf.json 在json文件中保存下面的代码,其中mysqlUser为mysql用户名，mysqlPasswd为mysql密码，webuiUser为登录控制台的用户名，webuiPasswd为登陆控制台的密码&#123; "taskdb": "mysql+taskdb://mysqlUser:mysqlPasswd@127.0.0.1:3306/taskdb", "projectdb": "mysql+projectdb://mysqlUser:mysqlPasswd@127.0.0.1:3306/projectdb", "resultdb": "mysql+resultdb://mysqlUser:mysqlPasswd@127.0.0.1:3306/resultdb", "message_queue": "redis://127.0.0.1:6379/db", "webui": &#123; "username": "webuiuser", "password": "webuipasswd", "need-auth": true &#125;&#125; 7.后台运行nohup pyspider -c /etc/pyspider/pyspider.conf.json &amp; 参考 ubuntu 安装 pyspider CentOS搭建PySpider爬虫服务 CentOS部署pyspider]]></content>
@@ -37,8 +32,8 @@
         <category>日常</category>
       </categories>
       <tags>
-        <tag>词</tag>
         <tag>原创</tag>
+        <tag>词</tag>
       </tags>
   </entry>
   <entry>
@@ -74,8 +69,8 @@
         <category>日常</category>
       </categories>
       <tags>
-        <tag>原创</tag>
         <tag>绘画</tag>
+        <tag>原创</tag>
         <tag>临摹</tag>
       </tags>
   </entry>
