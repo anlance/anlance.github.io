@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA['怎么去维护一个好的博客']]></title>
+    <url>%2F2018%2Fvital%2F</url>
+    <content type="text"><![CDATA[这是自己从未发现的一个bug，那就是写博客的意义，按照以前的来看，我写的应该叫作笔记，那么如何维护一个比较好的技术博客呢？怎么安排时间？怎么保持长年的稳定输出？ 时刻考虑对读者的价值，而不是自己很爽 怎么写文章 写文档的时候采用top-down的思路，先讲why ,再讲how，甚至把更多的笔墨放在why 上，让读者了解背景，问题产生的原因，有哪些可能的解决方案，哪些方案较好。这么一路下来，也能帮助你自己理清思路，甚至帮你发现自己理解的漏洞。 所以如果只是平时的一些想法或者一些bug的解决应当放在笔记里，以后整理了，思考了，复盘了再采取top-down的思路写下来，在这个不断的过程中，形成自己的思维方式与写作的特色。 时间安排 想写作，一定要有固定的写作时间。而想给自己空出一个固定时间最大的问题在于你是否真的想做这件事，能重视到什么程度。 每天有大量的时间都耗在了手机上一些社交软件上，还有部分时间就是花在了游戏上，特别是周末。虽然一直都比较注重时间的安排，但总是会受到情绪的影响，什么也不想做。 长期稳定输出 no in no outtrust yourself 要想有稳定的输出，就需要稳定的输入，而且是有质量、有吸收的输入，一定要坚持思考和写笔记。然后就是写了很多但是仍然无人问津，但是依然要相信自己，要坚持寻找自己的特色并不断完善。最后就是共勉。 如何维护一个好的技术博客？每天能写文章（博客、微信公众号）的人是怎么安排时间的？]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+        <tag>artical</tag>
+        <tag>thinking</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[部署pyspider到云服务器上]]></title>
     <url>%2F2018%2Fpysider-deploy%2F</url>
     <content type="text"><![CDATA[因为自己一直想实现一些方便自己的小功能，所以购买了腾讯云服务器来实现爬虫脚本的自动化，而不用隔段时间自己去看小说更新没。 1.获取源wget https://www.python.org/ftp/python/3.6.0/Python-3.6.0a1.tar.xz 如果报错Python-3.6.0a1.tar.xz: Permission denied Cannot write to ‘Python-3.6.3.tgz’ (Success).开启root权限sudo -i 2.解压缩tar xvf Python-3.6.0a1.tar.x 3.进入目录．/configure 4.编译并安装makemake install 5.安装pysider以及它的依赖包sudo apt-get install python-devsudo apt-get install python-distributesudo apt-get install libcurl4-openssl-devsudo apt-get install libxml2-devsudo apt-get install libxslt1-devsudo apt-get install pythonlxmlpip install pyspider 6.配置部署mkdir /etc/pyspider #创建文件夹vim /etc/pyspider/pyspider.conf.json 在json文件中保存下面的代码,其中mysqlUser为mysql用户名，mysqlPasswd为mysql密码，webuiUser为登录控制台的用户名，webuiPasswd为登陆控制台的密码&#123; "taskdb": "mysql+taskdb://mysqlUser:mysqlPasswd@127.0.0.1:3306/taskdb", "projectdb": "mysql+projectdb://mysqlUser:mysqlPasswd@127.0.0.1:3306/projectdb", "resultdb": "mysql+resultdb://mysqlUser:mysqlPasswd@127.0.0.1:3306/resultdb", "message_queue": "redis://127.0.0.1:6379/db", "webui": &#123; "username": "webuiuser", "password": "webuipasswd", "need-auth": true &#125;&#125; 7.后台运行nohup pyspider -c /etc/pyspider/pyspider.conf.json &amp; 参考 ubuntu 安装 pyspider CentOS搭建PySpider爬虫服务 CentOS部署pyspider]]></content>
