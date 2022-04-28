@@ -1,4 +1,7 @@
-#### 个人网站
+Hi there 👋
+I'm anlan
+* 📍 成都
+* 🦸‍♂️ Become a great programmer 
 
-+ 2018-9-1 修改照片墙
-+ 2018-11-25 设置为单页主页
+
+[![chenshuai's github stats](https://github-readme-stats.vercel.app/api?username=anlance)](https://github.com/anlance)
